@@ -1,0 +1,26 @@
+<%- include('../includes/head.ejs') %>
+    <%- include('../includes/navigation.ejs') %>
+
+    
+    <section class="ftco-section">
+    	<div class="container" style="text-align: center">
+    		<div class="row">
+    			<div class="col-lg-6 mb-5 ftco-animate">
+    				<a href="images/product-1.jpg" class="image-popup"><img src="<%- img_path%>" class="img-fluid" alt="Colorlib Template"></a>
+    			</div>
+    			<div class="col-lg-6 product-details pl-md-5 ftco-animate">
+    				<h3> <%- product_name%></h3>			
+    				
+    				<p class="price"><span><%- price%></span></p>
+    				<p><%- description%></p>
+						
+          	<form class="cart" method="POST" action="/addOrder">             
+                <input type="hidden" name="product_name" value="<%- product_name%>">              
+                <input type="hidden" name="price" value="<%- price%>">       							
+                <button type="submit"  class="btn " >Add to cart</button>
+             </form>
+    			</div>
+    		</div>
+    	</div>
+    </section>
+    <%- include('../includes/end.ejs') %>
